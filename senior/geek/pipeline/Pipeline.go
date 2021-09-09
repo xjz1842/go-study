@@ -79,12 +79,12 @@ func main() {
 	}
 
 	var nums1 = []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	for n := range pipeline(nums1, odd, sq, sum) {
+	for n := range pipeline(nums1,echo,odd, sq, sum) {
 		fmt.Println(n)
 	}
 
-	nums := makeRange(1, 10000)
-	in := echo(nums)
+	nums2 := makeRange(1, 10000)
+	in := echo(nums2)
 
 	const nProcess = 5
 	var chans [nProcess]<-chan int

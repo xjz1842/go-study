@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go-study/senior/ch22/server"
+	"go-study/senior/ch22"
 	"log"
 	"net"
 	"net/http"
@@ -9,8 +9,7 @@ import (
 )
 
 func main()  {
-
-	rpc.RegisterName("MathService",new(server.MathService))
+	rpc.RegisterName("MathService",new(mathService.MathService))
 	rpc.HandleHTTP()//新增的
 	l, e := net.Listen("tcp", ":1234")
 	if e != nil {

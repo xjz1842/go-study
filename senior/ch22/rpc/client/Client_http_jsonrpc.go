@@ -4,13 +4,13 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"go-study/senior/ch22/server"
 	"io"
 	"log"
 	"net"
 	"net/http"
 	"net/rpc"
 	"net/rpc/jsonrpc"
+	"go-study/senior/ch22"
 )
 
 
@@ -19,7 +19,7 @@ func main()  {
 	if err != nil {
 		log.Fatal("dialing:", err)
 	}
-	args := server.Args{A:7,B:8}
+	args := mathService.Args{A:7,B:8}
 	var reply int
 	err = client.Call("MathService.Add", args, &reply)
 	if err != nil {

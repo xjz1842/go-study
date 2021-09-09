@@ -1,18 +1,18 @@
 package main
 
 import (
-	"go-study/senior/ch22/server"
 	"io"
 	"log"
 	"net"
 	"net/http"
 	"net/rpc"
 	"net/rpc/jsonrpc"
+	"go-study/senior/ch22"
 )
 
 func main()  {
 
-	rpc.RegisterName("MathService", new(server.MathService))
+	rpc.RegisterName("MathService", new(mathService.MathService))
 	//注册一个path，用于提供基于http的json rpc服务
 	http.HandleFunc(rpc.DefaultRPCPath, func(rw http.ResponseWriter, r *http.Request) {
 		conn, _, err := rw.(http.Hijacker).Hijack()
