@@ -19,4 +19,4 @@ func main()  {
 		log.Fatal("MathService.Add error:", err)
 	}
 	fmt.Printf("MathService.Add: %d+%d=%d", args.A, args.B, reply)
-}	
+}
